@@ -1,0 +1,237 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #5e5e5e;
+  --link: #3f6ea5;
+  --link-hover: #2f5682;
+  --line: #121212;
+  --panel: #f8f8f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.06rem;
+  line-height: 1.68;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+.wrapper {
+  width: min(900px, 100% - 2rem);
+  margin: 0 auto;
+}
+
+.site-header {
+  background: var(--bg);
+}
+
+.header-inner {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.3rem 0 0.7rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-title {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: clamp(1.5rem, 1.6vw + 1rem, 2rem);
+  letter-spacing: -0.06em;
+  font-weight: 500;
+  color: #000;
+}
+
+.site-title:hover {
+  color: #000;
+}
+
+.site-nav .menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.page-link {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.0rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.page-link:hover,
+.page-link.is-active {
+  color: #000;
+}
+
+.page-content {
+  padding: 1.8rem 0 2.5rem;
+}
+
+.site-footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 1rem 0 1.4rem;
+}
+
+.footer-text {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+
+.footer-text p {
+  margin: 0;
+}
+
+.footer-top {
+  display: block;
+  margin-bottom: 0.85rem;
+}
+
+.footer-col {
+  min-width: 220px;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.2rem;
+}
+
+.contact-list li.address-start {
+  margin-top: 0.75rem;
+}
+
+.footer-col-social {
+  display: flex;
+  align-items: flex-start;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--muted);
+}
+
+.social-link:hover {
+  color: #000;
+}
+
+.footer-note {
+  margin-top: 0.35rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.6rem;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1rem;
+  margin-top: 1.3rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1rem;
+}
+
+.home-intro {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.4rem;
+  align-items: start;
+  margin-bottom: 1.5rem;
+}
+
+.home-photo img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.13);
+}
+
+.square-list {
+  list-style-type: square;
+  margin-left: 1.2rem;
+}
+
+.card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.card-list li {
+  background: var(--panel);
+  border: 1px solid #ececec;
+  border-radius: 6px;
+  padding: 0.75rem 0.9rem;
+}
+
+@media (max-width: 760px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav .menu {
+    gap: 0.75rem;
+  }
+
+  .home-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .home-photo {
+    max-width: 280px;
+  }
+
+}
