@@ -1,0 +1,17 @@
+<li>
+  <p class="research-title">
+    <strong>{{ include.item.title }}</strong>
+  </p>
+
+  <em>
+    {{ include.item.authors }}{% if include.item.year %} ({{ include.item.year }}){% endif %}
+  </em><br>
+
+  {% if include.item.links and include.item.links.size > 0 %}
+    <p class="research-links">
+      {%- for link in include.item.links -%}
+      <a href="{{ link.url }}">{{ link.label }}</a>{%- unless forloop.last -%}&ensp;|&ensp;{%- endunless -%}
+      {%- endfor -%}
+    </p>
+  {% endif %}
+</li>

@@ -76,17 +76,28 @@ a:hover {
 }
 
 .page-link {
+  --page-link-ink: #000;
+  display: inline-block;
+  padding: 0.12rem 0.42rem;
   font-family: "IBM Plex Mono", "Courier New", monospace;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 1.0rem;
   font-weight: 600;
+  color: var(--page-link-ink);
+}
+
+.page-link:hover {
   color: #000;
 }
 
-.page-link:hover,
 .page-link.is-active {
-  color: #000;
+  background: var(--page-link-ink);
+  color: var(--bg);
+}
+
+.page-link.is-active:hover {
+  color: var(--bg);
 }
 
 .page-content {
@@ -196,6 +207,41 @@ ol {
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.13);
 }
 
+.about-header {
+  margin: 0 0 1.4rem;
+}
+
+.about-photo {
+  width: 98%;
+  margin: 0 auto;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.13);
+}
+
+.about-text {
+  margin-inline: clamp(0.8rem, 2.2vw, 1.4rem);
+}
+
+.equal-contrib-note {
+  margin-bottom: 1rem;
+}
+
+.research-title {
+  font-size: 1.25em;
+  margin-bottom: 0;
+}
+
+.research-links {
+  font-size: 0.85em;
+  margin-bottom: 0;
+}
+
 .square-list {
   list-style-type: square;
   margin-left: 1.2rem;
@@ -232,6 +278,14 @@ ol {
 
   .home-photo {
     max-width: 280px;
+  }
+
+  .about-photo {
+    width: 98%;
+  }
+
+  .about-text {
+    margin-inline: 0.5rem;
   }
 
 }

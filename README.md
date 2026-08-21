@@ -13,15 +13,19 @@ This repository contains a Jekyll-based GitHub Pages personal website.
      - Global footer attribution on all pages
 
 ## Repository Structure
- * `index.html`: homepage content (uses Jekyll front matter and shared layout)
- * `_layouts/default.html`: global page layout (header, navigation, footer)
  * `_data/navigation.yml`: tab definitions for primary navigation
+ * `_data/research.yml`: research works definitions for research page
+ * `_includes/footer.md`: footer definition used across entire webpage
+ * `_includes/research-item.html`: research work item list card HTML layout
+ * `_layouts/default.html`: global page layout (header, navigation, footer)
  * `assets/css/main.css`: site styling
+ * `content/images`: images used in webpage (includes placeholder files)
  * `content/about.md`: content for the _About_ page
  * `content/research.md`: content for the _Research_ page
  * `content/teaching.md`: content for the _Teaching_ page
  * `_config.yml`: Jekyll configuration
  * `Gemfile`: Ruby gem dependencies.
+ * `index.html`: homepage content (uses Jekyll front matter and shared layout)
 
 ## Styling Updates
 The main style file is `assets/css/main.css`. Common tweaks include:
@@ -54,6 +58,23 @@ permalink: /cv/
 Add content here.
 ```
 Save and preview locally (see details below); page will appear automatically.
+
+## Adding New Research Works
+To maintain consistent formatting for all we use an HTML layout for each work
+item defined in `_includes/research-item.html`. All data required for an item is
+defined within `_data/research.yml`. To add a research work item, first open the
+aforementioned YAML file. Then, create a new top-level list with the following
+information included:
+```yaml
+ - title: Project title
+   authors: Appleseed, J., Doe, J.
+   year: "2000"
+   links:
+    - label: paper (pdf)
+      url: https://arxiv.org/list/cs.AI/recent
+    - label: source code (github)
+      url: https://github.com/
+```
 
 ## Setting Up Local Preview
 The following steps are used to support local preview during development. Note

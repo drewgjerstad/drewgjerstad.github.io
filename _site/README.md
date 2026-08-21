@@ -1,58 +1,52 @@
-# Personal GitHub Pages Site
+# GitHub Pages Site
+This repository contains a Jekyll-based GitHub Pages personal website.
 
-This repository contains a Jekyll-based personal website for GitHub Pages.
-
-## Design Notes
-
-- Platform: Jekyll (`~> 4.3`)
-- Local server dependency: `webrick`
-- Style direction: minimalist academic layout inspired by Aaron J. Molstad's site
-- Customization choices in this repo:
-  - White background
-  - Monospace heading/navigation style
-  - Serif body text for readability
-  - Reusable top navigation tabs
-  - Global footer attribution on all pages
+## Design Information
+ * Platform: Jekyll (`~> 4.3`)
+ * Local server dependency: `webrick`
+ * Style direction: minimalist academic layout
+ * Customization choices in this repo:
+     - White background
+     - Monospace heading/navigation style
+     - Serif body text for readability
+     - Reusable top navigation tabs
+     - Global footer attribution on all pages
 
 ## Repository Structure
+ * `_data/navigation.yml`: tab definitions for primary navigation
+ * `_data/research.yml`: research works definitions for research page
+ * `_includes/footer.md`: footer definition used across entire webpage
+ * `_includes/research-item.html`: research work item list card HTML layout
+ * `_layouts/default.html`: global page layout (header, navigation, footer)
+ * `assets/css/main.css`: site styling
+ * `content/images`: images used in webpage (includes placeholder files)
+ * `content/about.md`: content for the _About_ page
+ * `content/research.md`: content for the _Research_ page
+ * `content/teaching.md`: content for the _Teaching_ page
+ * `_config.yml`: Jekyll configuration
+ * `Gemfile`: Ruby gem dependencies.
+ * `index.html`: homepage content (uses Jekyll front matter and shared layout)
 
-- `index.html`: homepage content (uses Jekyll front matter and shared layout)
-- `_layouts/default.html`: global page layout (header, nav, footer)
-- `_data/navigation.yml`: tab definitions for primary navigation
-- `assets/css/main.css`: site-wide styling
-- `content/about.md`: About page
-- `content/research.md`: Research page
-- `content/teaching.md`: Teaching page
-- `_config.yml`: Jekyll configuration
-- `Gemfile`: Ruby gem dependencies
+## Styling Updates
+The main style file is `assets/css/main.css`. Common tweaks include:
+ * Colors and theme tokens: `:root`
+ * Header/nav look: `.site-header`, `.site-nav`, `.page-link`
+ * Typography: `body`, `h1`, `h2`, `h3`
+ * Footer style: `.site-footer`, `.footer-text`
 
-## Editing Content
+## Updating Content
+To update existing pages, edit the Markdown files in `content/`. Notice that
+each of these pages uses a `permalink` in the front matter so URLs remain:
+ * `/about/`
+ * `/research/`
+ * `/teaching/`
 
-### Update existing pages
-
-Edit the Markdown files in `content/`:
-
-- `content/about.md`
-- `content/research.md`
-- `content/teaching.md`
-
-Each page uses a `permalink` in front matter so URLs remain:
-
-- `/about/`
-- `/research/`
-- `/teaching/`
-
-### Add a new tab/page
-
-1. Add a new entry in `_data/navigation.yml`:
-
+To add a new page ("tab"), first add a new entry in `_data/navigation.yml`:
 ```yml
 - title: CV
   url: /cv/
 ```
-
-2. Create a new page file (for example `content/cv.md`):
-
+Then, create a new Markdown file for the page (`content/cv.md`, for example):
 ```md
 ---
 layout: default
@@ -61,108 +55,70 @@ permalink: /cv/
 ---
 
 # CV
-Add your content here.
+Add content here.
+```
+Save and preview locally (see details below); page will appear automatically.
+
+## Adding New Research Works
+To maintain consistent formatting for all we use an HTML layout for each work
+item defined in `_includes/research-item.html`. All data required for an item is
+defined within `_data/research.yml`. To add a research work item, first open the
+aforementioned YAML file. Then, create a new top-level list with the following
+information included:
+```yaml
+ - title: Project title
+   authors: Appleseed, J., Doe, J.
+   year: "2000"
+   links:
+    - label: paper (pdf)
+      url: https://arxiv.org/list/cs.AI/recent
+    - label: source code (github)
+      url: https://github.com/
 ```
 
-3. Save and preview locally. The tab will appear automatically.
+## Setting Up Local Preview
+The following steps are used to support local preview during development. Note
+that we assume development is occurring on macOS (Apple Silicon); other systems
+likely use similar commands but are not verified here.
 
-## Styling Updates
-
-Main style file: `assets/css/main.css`
-
-Common tweaks:
-
-- Colors and theme tokens: `:root`
-- Header/nav look: `.site-header`, `.site-nav`, `.page-link`
-- Typography: `body`, `h1`, `h2`, `h3`
-- Footer style: `.site-footer`, `.footer-text`
-
-## Local Preview Setup
-
-### 1) Install Ruby (macOS)
-
-Install Homebrew if needed:
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-Install Ruby via Homebrew:
-
-```bash
+First, install **Ruby** (requires Homebrew) using the following command:
+```sh
 brew install ruby
 ```
-
-Add Homebrew Ruby to your shell path (`~/.zshrc`):
-
-Apple Silicon:
-
-```bash
+Next, add the new installation to the shell path:
+```sh
 echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 ```
-
-Intel Mac:
-
-```bash
-echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.zshrc
-source ~/.zshrc
-```
-
-Verify Ruby is available:
-
-```bash
+After installation, verify that Ruby is available:
+```sh
 ruby -v
 gem -v
 ```
 
-### 2) Install Bundler
-
-```bash
+We need to install the Jekyll dependencies using the following command:
+```sh
 gem install bundler
-bundle -v
+bundle -v  # verify installation
 ```
 
-If `gem install bundler` fails with a permissions error, use a user-local install:
-
-```bash
-gem install --user-install bundler
-echo 'export PATH="$HOME/.gem/ruby/$(ruby -e "print RbConfig::CONFIG[\"ruby_version\"]")/bin:$PATH"' >> ~/.zshrc
-source ~/.zshrc
-bundle -v
+We also need to install the site dependencies using the following command:
+```sh
+bundle install  # run from repository root
 ```
 
-### 3) Install site dependencies
-
-From repository root:
-
-```bash
-bundle install
-```
-
-### 4) Run Jekyll locally
-
-```bash
+With all of the previous installations complete, run Jekyll locally using the
+following command:
+```sh
 bundle exec jekyll serve
 ```
 
-Jekyll will print a local URL, usually:
+After running the above command, Jekyll will print a local URL:
+`http://127.0.0.1:4000/`. Open this URL in your browser to preview changes.
 
-- `http://127.0.0.1:4000/`
-
-Open that in your browser to preview changes.
-
-## Typical Update Workflow
-
-1. Edit page content or styles.
-2. Run `bundle exec jekyll serve`.
-3. Refresh browser and verify layout/content.
-4. Commit and push to GitHub.
-5. GitHub Pages rebuilds and publishes updates.
 
 ## Attribution
-
-A site-wide footer is configured in `_layouts/default.html` and includes:
-
-- Codex code-generation attribution
-- Design inspiration attribution with a link to Aaron J. Molstad's homepage
+A site-wide footer is configured in `_layouts/default.html` to provide
+attribution for components used in this site.
+ * Codex code-generation attribution
+ * Design inspiration attribution with a link to Aaron J. Molstad's homepage

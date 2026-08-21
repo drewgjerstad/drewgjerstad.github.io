@@ -21,19 +21,20 @@
       <nav class="site-nav" aria-label="Primary">
         <ul class="menu">
           
-            
+            <li>
+              <a href="/" class="page-link">Home</a>
+            </li>
+          
             <li>
               <a href="/about/" class="page-link is-active">About</a>
             </li>
           
-            
             <li>
-              <a href="/research/" class="page-link is-active">Research</a>
+              <a href="/research/" class="page-link">Research</a>
             </li>
           
-            
             <li>
-              <a href="/teaching/" class="page-link is-active">Teaching</a>
+              <a href="/teaching/" class="page-link">Teaching</a>
             </li>
           
         </ul>
@@ -43,20 +44,29 @@
 
   <main class="page-content">
     <div class="wrapper">
-      <h1 id="about">About</h1>
+      <section class="about-header">
+    <div class="about-photo">
+  <img src="/content/images/puget-sound-2023-hero.jpg"
+       alt="Whidbey Island in Puget Sound, Washington"
+       width="1600"
+       height="460"
+       decoding="async" />
+    </div>
+</section>
 
-<p>I am a [title] at [institution], working in [field].</p>
-
-<p>My interests include:</p>
-
-<ul>
-  <li>[Interest 1]</li>
-  <li>[Interest 2]</li>
-  <li>[Interest 3]</li>
-</ul>
-
-<p>Contact: youremail at domain dot edu</p>
-
+<section class="about-text">
+    <h1>About</h1>
+    <p>
+        My research interests include scientific and probabilistic ML,
+        sequential decision-making under uncertainty, Bayesian optimization, and
+        generative modeling. In particular, I am interested in the intersection
+        of these methods with regard to applications within scientific and
+        societal domains. Critical examples include accelerating discovery
+        campaigns (<em>i.e.,</em> materials, medicines, etc.) and engineering
+        design (<em>i.e.,</em> model and simulation tuning, principled
+        experiment design, etc.).
+    </p>
+</section>
     </div>
   </main>
 

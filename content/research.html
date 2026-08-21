@@ -1,0 +1,29 @@
+---
+layout: default
+title: Research
+permalink: /research/
+---
+
+<h1>Research</h1>
+
+<!-- RESEARCH SUPPORT STATEMENT -->
+<!--
+<p>
+    <em>
+        Research supported in part by...
+    </em>
+</p>
+-->
+
+<!-- EQUAL CONTRIBUTION NOTE -->
+<p class="equal-contrib-note">
+    ✱ denotes equal contributions
+</p>
+
+<p><em>More information coming soon!</em></p>
+
+<ul class="card-list">
+    {% for item in site.data.research %}
+        {% include research-item.html item=item %}
+    {% endfor %}
+</ul>
