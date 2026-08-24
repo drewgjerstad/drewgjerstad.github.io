@@ -60,8 +60,8 @@ Add content here.
 Save and preview locally (see details below); page will appear automatically.
 
 ## Adding New Research Works
-To maintain consistent formatting for all we use an HTML layout for each work
-item defined in `_includes/research-item.html`. All data required for an item is
+To maintain consistent formatting, we use an HTML layout for each work item
+defined in `_includes/research-item.html`. All data required for an item is
 defined within `_data/research.yml`. To add a research work item, first open the
 aforementioned YAML file. Then, create a new top-level list with the following
 information included:
@@ -75,6 +75,35 @@ information included:
     - label: source code (github)
       url: https://github.com/
 ```
+_Note: Research works are sorted reverse-chronologically on year. For research works within the same year, priority will be given based on time of year and first authorship._
+
+### Adding New Recommended References
+To maintain consistent formatting, we use an HTML layout for each recommended
+reference item defined in `_includes/reference-item.html`. All data required for
+an item is defined within `_data/references.yml`. To add a recommended reference
+item, first open the aforementioned YAML file. Then, create a new top-level list
+with the following information included:
+```yaml
+ - title: Reference title
+   authors: Appleseed, J., Doe, J.
+   year: "2000"
+   website: https://github.com/
+   summary: A great reference for something of substance
+```
+_Note: Recommended references are sorted alphabetically based on the last name of the first author listed._
+
+### Adding New Useful Websites
+To maintain consistent formatting, we use an HTML layout for each useful website
+item defined in `_includes/website-item.html`. All data required for an item is
+defined within `_data/websites.yml`. To add a useful website item, first open
+the aforementioned YAML file. Then, create a new top-level list with the
+following information included:
+```yaml
+ - title: Website title
+   link: https://github.com/
+   summary: A very useful website that helps me do stuff
+```
+_Note: Useful websites are sorted in particular order._
 
 ## Setting Up Local Preview
 The following steps are used to support local preview during development. Note

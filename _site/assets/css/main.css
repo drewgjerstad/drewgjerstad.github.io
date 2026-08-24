@@ -247,6 +247,42 @@ ol {
   margin-bottom: 0;
 }
 
+.references-list {
+  margin-top: 0.75rem;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.websites-list {
+  margin-top: 0.75rem;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.card-list .references-list li,
+.card-list .websites-list li {
+  background: #f0f0f0;
+  border: 1px solid #c2c2c2;
+  border-radius: 6px;
+  padding: 0.65rem 0.8rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.card-list .references-list li:last-child,
+.card-list .websites-list li:last-child {
+  margin-bottom: 0;
+}
+
+.reference-title,
+.website-title {
+  font-size: 1.1em;
+  margin-bottom: 0;
+}
+
 .square-list {
   list-style-type: square;
   margin-left: 1.2rem;

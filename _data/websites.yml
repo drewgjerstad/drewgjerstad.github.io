@@ -1,0 +1,11 @@
+ - title: Weights & Biases
+   link: https://wandb.ai/site/
+   summary: 'A useful service (with generous free and academic tiers) for tracking and evaluating experiments in the domains of artificial intelligence, machine learning, deep learning, and more.'
+
+ - title: Python Design Patterns
+   link: https://python-patterns.guide
+   summary: 'An evolving guide of design patterns in Python; useful for learning to write clean, structured Python code.'
+
+ - title: Awesome Public Datasets
+   link: https://github.com/awesomedata/awesome-public-datasets
+   summary: 'A GitHub repository containing topic-centric high-quality public data sources.'

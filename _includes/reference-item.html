@@ -1,0 +1,13 @@
+<li>
+  <p class="reference-title">
+    <strong>
+      <a href="{{ include.item.website }}">{{ include.item.title }}</a>
+    </strong>
+  </p>
+
+  <em>
+    {{ include.item.authors }}{% if include.item.year %} ({{ include.item.year }}){% endif %}
+  </em><br>
+
+  <span>{{ include.item.summary }}</span>
+</li>

@@ -43,9 +43,22 @@ permalink: /teaching/
         The list below includes select books related to artificial intelligence,
         machine learning, deep learning, reinforcement learning, Bayesian
         optimization, and related topics that have been rather useful.
+
+        <ul class="references-list">
+            {% for item in site.data.references %}
+                {% include reference-item.html item=item %}
+            {% endfor %}
+        </ul>
     </li>
     <!-- Useful Websites -->
     <li>
         <strong>Useful Websites</strong><br>
+        This list below are various sites/repositories that present or provide
+        useful resources.
+        <ul class="websites-list">
+            {% for item in site.data.websites %}
+                {% include website-item.html item=item %}
+            {% endfor %}
+        </ul>
     </li>
 </ul>
