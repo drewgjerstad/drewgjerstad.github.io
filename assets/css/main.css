@@ -191,6 +191,10 @@ h2 {
   margin-top: 1.3rem;
 }
 
+.home-section-heading {
+  margin-left: clamp(0.8rem, 2.2vw, 1.4rem);
+}
+
 p,
 ul,
 ol {
@@ -210,6 +214,23 @@ ol {
   display: block;
   border-radius: 4px;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.13);
+}
+
+.learn-more-link {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 2px;
+}
+
+.learn-more-link:hover,
+.learn-more-link:focus-visible {
+  color: var(--link-hover);
+  text-decoration-thickness: 3px;
 }
 
 .about-header {
